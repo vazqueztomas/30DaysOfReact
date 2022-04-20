@@ -40,7 +40,7 @@ const skills = [
   "PYTHON",
 ];
 const skillsFormated = skills.map((item) => 
-  <li>{item}</li>
+  <li key = {item}>{item}</li>
 );
 
 let today = new Date().toDateString();
