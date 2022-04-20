@@ -1,78 +1,73 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import avatarImage from './images/foto1.jpg'
+import avatarImage from "./images/foto1.jpg";
+import feTech from "./images/frontend_technologies.png";
 
-const jsx = <h1>Hola mundo!</h1>;
-const title = <h2>Getting started React</h2>;
-const author = {
-  firstName: 'Tomas',
-  lastName: 'Vazquez',
-}
-
-const header = (
-  <header className="header-wrapper">
-    <h1>welcome to 30 days of react</h1>
-    {title}
-  </header>
-);
-
-const num1 = 3
-const num2 = 2
-
-const result = (
-  <p>
-    {num1} + {num2} = {num1+num2}
-  </p>
-)
-
-const yearBorn = 1820
-const currentYear = new Date().getFullYear()
-const age = currentYear - yearBorn
-const personAge = (
-  <p>
-    {' '}
-    {author.firstName} {author.lastName} is {age} years old
-  </p>
-)
-
-const userStyle = {
-  "width":"200px"
-}
-
-const user = ( 
+const techs = (
   <div>
-    <img src={avatarImage} style = {userStyle}alt = 'avatar image'/>
+    <img src={feTech} className="techs" />
   </div>
-)
-
-const main = (
-  <main className="main-wrapper">
-    <p>Prerequisite to get started on React: </p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Javascript</li>
-      
-    </ul>
-    {result}
-    {user}
-  </main>
 );
 
-const footer = (
-  <footer className="footer-wrapper">
-    <p>Copyright 2022</p>
-  </footer>
+// level 2
+const form = (
+  <div className="formulario">
+    <h1 className="title">SUBSCRIBE</h1>
+    <h4 className="sub-title">
+      Sign up with your email address to receive news and updates
+    </h4>
+    <form className="input-container">
+      <input placeholder="First name"></input>
+      <input placeholder="Last name"></input>
+      <input placeholder="Email"></input>
+    </form>
+    <button>Subscribe</button>
+  </div>
+);
+// Level 3
+
+const name = "Tomas Vazquez";
+const paragraph = "Front end developer, Argentina.";
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JAVASCRIPT",
+  "REACT",
+  "FIREBASE",
+  "MONGODB",
+  "NODE",
+  "PYTHON",
+];
+const skillsFormated = skills.map((item) => 
+  <li>{item}</li>
+);
+
+let today = new Date().toDateString();
+
+const userCard = (
+  <div className="userCard">
+    <div className="info">
+      <img src={avatarImage} alt="User Card" />
+      <h3>{name}</h3>
+      <p>{paragraph}</p>
+    </div>
+    <div className="skills">
+      <h4>SKILLS</h4>
+      <ul className="skills-list">{skillsFormated}</ul>
+    </div>
+
+    <p className="joined">Joined {today}</p>
+  </div>
 );
 
 const app = (
-  <div>
-    {header}
-    {main}
-    {footer}
+  <div className="app">
+    {techs}
+    {form}
+    {userCard}
   </div>
 );
-
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(app, rootElement);
