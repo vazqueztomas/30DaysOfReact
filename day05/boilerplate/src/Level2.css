@@ -1,0 +1,13 @@
+.image{
+    width: 500px
+}
+
+ input {
+    padding:10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px;
+}
